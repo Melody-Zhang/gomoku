@@ -1,0 +1,546 @@
+/*------------------------------------------------------------
+
+  base.css
+
+  Created by: Dave Rupert ... augmented by Charles Lai for
+              CS 2300
+  Contact:    http://github.com/davatron5000/foldy960
+
+  Copyright 2012
+  License:    WTFPL + "Not going to maintain this because
+              the rent is too damn high licence."
+
+=================================================================== */
+
+/* Responsive Resets
+=================================================================== */
+@-o-viewport {
+  width: device-width;
+}
+@-ms-viewport {
+  width: device-width;
+}
+@viewport {
+  width: device-width;
+}
+
+html {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+img,
+audio,
+video,
+canvas {
+  max-width: 100%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+/* Grid > 6 Column Mobile First
+=================================================================== */
+
+.container {
+  /*
+    The `max-width` property is the width governer. I dare you to experiment
+    with setting this larger, something like 1280px.
+  */
+  width:100% !important;
+  height: 100vh; 
+  position: relative;
+}
+
+.container-big {
+  /*
+    The `max-width` property is the width governer. I dare you to experiment
+    with setting this larger, something like 1280px.
+  */
+  width:100% !important;
+  height: 125vh; 
+  position: relative;
+}
+
+.container-half {
+  width:100%;
+  height: 50vh;
+  position: relative;
+}
+
+.row {
+  clear: both;
+}
+
+@media screen and (min-width: 0px) {
+  .container {
+    width: 98%;
+  }
+
+  .grid-1,
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .grid-5,
+  .grid-6,
+  .grid-half,
+  .grid-full,
+  .grid-unit {
+    float: left;
+    width:96.969696969697%;
+    margin:0 1.515151515152% 1em;
+  }
+
+  .gallery .grid-unit,
+  .grid-half {
+    width: 30%;
+    height: 20vh;
+    background-size: cover;
+  }
+
+  .grid-flow-opposite{
+    float:right
+  }
+
+}
+
+@media screen and (min-width: 640px) {
+  .grid-1     { width: 13.636363636364%; }
+  .grid-2     { width: 30.30303030303%; }
+  .grid-3,
+  .grid-half  { width: 46.969696969697%; }
+  .grid-4     { width: 63.636363636364%; }
+  .grid-5     { width: 80.30303030303%; }
+  .grid-6,
+  .grid-full  { width: 96.969696969697%; }
+
+  .gallery .grid-unit {
+    width: 30%;
+    height: 20vh;
+    background-size: cover;
+  }
+
+  .grid-unit:focus,
+  .grid-unit:hover{
+    background-color:#ebebeb;
+  }
+
+  .content-pad-right {
+    padding-right: 4%; /* Use (or don't) as necessary. */
+  }
+
+  .content-pad-left {
+    padding-left: 8%;
+  }
+}
+
+/* Colors and Typography
+=================================================================== */
+/*Colors*/
+.white {
+  background-color: #FFFFFF;
+}
+
+.black {
+  background-color: #000000;
+}
+
+.light-gray {
+  background-color: #BBBBBB;
+}
+
+.gray {
+  background-color: #888888;
+}
+
+.dark-gray {
+  background-color: #555555;
+}
+
+.almost-black {
+  background-color: #181a1a;
+}
+
+.beige {
+  background-color: #ebe1c3;
+}
+
+.green{
+  background-color: #5cb85c !important;
+}
+
+.magenta {
+  background-color:#ff3452;
+}
+
+.black-gradient {
+  background: #1c1e20;
+  background: -moz-radial-gradient(center, circle cover, #555a5f 0%, #1c1e20 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #555a5f), color-stop(100%, #1c1e20));
+  background: -webkit-radial-gradient(center, circle cover, #555a5f 0%, #1c1e20 100%);
+  background: -o-radial-gradient(center, circle cover, #555a5f 0%, #1c1e20 100%);
+  background: -ms-radial-gradient(center, circle cover, #555a5f 0%, #1c1e20 100%);
+  background: radial-gradient(center, circle cover, #555a5f 0%, #1c1e20 100%);
+  background-color: #2b2b2b;
+}
+
+.navy-blue {
+  background-image: url("../img/navy_blue.png");
+}
+
+.white-fabric {
+  background-image: url("../img/whitefabric.png");
+}
+
+.centered {
+  text-align: center;
+}
+
+/*Typesetting*/
+.justified {
+  text-align: justify;
+}
+
+.right {
+  text-align: right;
+}
+
+.left{
+  text-align: left;
+}
+
+/*Font Colors*/
+.white-font{
+  color:white;
+}
+
+.red-font, .error {
+  color:red;
+}
+
+.magenta-font {
+  color:#ff3452;
+}
+
+.gray-font {
+  color:#888888;
+}
+.black-font {
+  color:black;
+}
+
+.green-font {
+  color:#5cb85c;
+}
+
+.beige-font {
+  color:#ebe1c3;
+}
+
+/* Headings and Styling */
+.large-heading {
+  font-size: 4.5em;
+  margin: 0;
+}
+
+.heading {
+  font-size: 3em;
+  margin: 0;
+}
+
+.sub-heading {
+  font-size: 2em;
+  margin-top: 0em;
+  margin-bottom: 0.5em;
+}
+
+.sub-sub-heading {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.description {
+  font-size: 1.1em;
+  text-align: justify;
+}
+
+.shadow {
+  text-shadow:0px 1.5px 4px #000000;
+}
+
+.box-shadow {
+  box-shadow:0px 1.5px 4px #000000;
+}
+
+/* Link Styling */
+a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 1em;  
+}
+
+a:focus,
+a:hover {
+  color: gray;
+}
+
+.border {
+
+}
+
+/* Layout
+=================================================================== */
+body {
+  font: 100%/1.5 'Open Sans';
+  font-weight: 300;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100%;
+  padding: 0;
+  margin: 0 0 0 0;
+}
+
+footer {
+  font-size: 0.9em;
+  padding: 0.5em 0 2.5em;
+  height: 9vh;
+  width: 100vw;
+}
+
+.header-bar{
+  z-index: 10;
+  height: 7vh;
+  margin: 0 0 0 0;
+  width: 100vw;
+  position: fixed;
+  display: inline;
+  box-shadow: 0px 3px 10px 3px #000000;
+}
+
+/* Buttons
+-------------------------------------------------------------- */
+.button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 0;
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+       -o-user-select: none;
+          user-select: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.button-white {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.button-blue {
+  color: #ffffff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+
+.button-white:hover,
+.button-white:focus,
+.button-white:active {
+  color: #333;
+  background-color: #ebebeb;
+  border-color: #adadad;
+}
+
+.button-blue:hover,
+.button-blue:focus,
+.button-blue:active,
+.button-blue.active {
+  color: #fff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+
+.button-green {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.button-green:hover,
+.button-green:focus,
+.button-green:active,
+.button-green.active {
+  color: #fff;
+  background-color: #47a447;
+  border-color: #398439;
+}
+
+.button-large {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+
+/* Section Separation
+-------------------------------------------------------------- */
+.divider {
+  position: relative;
+  width: 100vw;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  border-color: #555555;
+}
+
+.padding {
+  height: 9vh;
+}
+
+.center-of-element {
+  padding-top: 28vh;
+}
+
+/* Forms
+-------------------------------------------------------------- */
+.search {
+  width:29vw;
+}
+
+.searchform {
+  padding-top:14vh;
+}
+
+.rounded {
+  border-radius: 4px;
+}
+
+.longtext{
+  height:150px; 
+  width: 300px;
+}
+
+/* Navigation
+-------------------------------------------------------------- */
+.scroll_arrow {
+  position: absolute;
+  bottom: 2vh;
+  left: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.sidebar {
+  float: left;
+  background-color:#000;
+  width:17vw;
+  height:100vh;
+  overflow-y:scroll;
+}
+
+.sidebar-category {
+  background-color: #222 ;
+  width: 100%;
+  height:5%;
+  text-align: center;
+  font-size: 1em;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px 0 0 0;
+}
+
+.sidebar-item {
+  background-color: #333;
+  width: 100%;
+  height: 4%;
+  text-align: center;
+  font-size: .85em;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px 0 0 0;
+}
+
+
+input.sidebar-item {
+  color: white !important;
+  font-family: 'Open Sans' !important;
+  font-size: .85 em;
+  font-weight: 300;
+}
+
+input.sidebar-item:focus {
+  outline: 0;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+#search:focus{
+  cursor: default;
+}
+
+.sidebar-item:hover {
+  cursor: pointer;
+  background-color: #444;
+}
+
+.sidebar-main {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  float: right;
+  width: 80vw;
+  height: 100vh;
+  text-align: center;
+}
+
+.return {
+  position: absolute;
+  bottom: 50px;
+}
+
+/*.sticky {
+  position: fixed relative;
+}*/
+
+/* Logo and Images
+-------------------------------------------------------------- */
+.logo-container {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  margin-top: 15vh;
+}
+
+.logo{
+  margin-right: auto;
+  margin-left: auto;
+  width: 25vw;
+  height: auto;
+}
+
+.mini-logo{
+
+}
+
+#search-icon {
+    max-width: 10%;
+}
+
+.photo {
+  background-repeat: repeat-x;
+}
+.photo:hover {
+  cursor: pointer;
+}
+
+.guestbook-map {
+
+}
