@@ -1,27 +1,27 @@
 {
-  "name": "electron-quick-start",
+  "name": "gomoku-ai",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "A gomoku game, gui, and minimax-based AI.",
   "main": "main.js",
   "scripts": {
     "start": "electron main.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atom/electron-quick-start.git"
+    "url": "git+https://github.com/charleslai/gomoku-ai.git"
   },
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial"
+    "gomoku",
+    "ai",
+    "minimax",
+    "pruning"
   ],
-  "author": "GitHub",
+  "author": "charleslai",
   "license": "CC0-1.0",
   "bugs": {
-    "url": "https://github.com/atom/electron-quick-start/issues"
+    "url": "https://github.com/charleslai/gomoku-ai/issues"
   },
-  "homepage": "https://github.com/atom/electron-quick-start#readme",
+  "homepage": "https://github.com/charleslai/gomoku-ai#readme",
   "devDependencies": {
     "electron-prebuilt": "^0.36.0"
   }
