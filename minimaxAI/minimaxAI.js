@@ -55,7 +55,7 @@ window.addEventListener('load', function() {
          * @param  {[type]} type  [description]
          * @return {[type]}       [description]
          */
-        
+
         findTypeCells: function(board, type) {
             var copyBoard = this.makeBoardCopy(board);
             var typeCells = [];
@@ -82,9 +82,9 @@ window.addEventListener('load', function() {
         },
 
         /**
-         * Find all empty cells adjacent to an 
+         * Find all empty cells adjacent to an
          * x,y position on the evaluated board.
-         * 
+         *
          * @param  {[type]} board [description]
          * @param  {[type]} x     [description]
          * @param  {[type]} y     [description]
@@ -379,7 +379,7 @@ window.addEventListener('load', function() {
             }
             return count;
         },
- 
+
         /**
          * Find the number of i-length diagonal chains
          * going in an upwards direction
@@ -420,24 +420,23 @@ window.addEventListener('load', function() {
          * Evaluate board function. Determines score using
          * the number of rows and columns that are 1,2,and
          * 3 pieces away from a win state.
-         * 
+         *
          * @param  {Array} Game board to evaluate
          * @return {Integer} Score
          */
         evaluateBoard: function(board, type) {
-            var numZeros = this.findIColChain(board,type,5,true) + this.findIRowChain(board,type,5,true) + this.findDIDiagChain(board,type,5) + this.findUIDiagChain(board,type,5);
             var numOnes =  this.findIColChain(board,type,4,true)+ this.findIRowChain(board,type,4,true) + this.findDIDiagChain(board,type,4) + this.findUIDiagChain(board,type,4);
             var numTwos = this.findIColChain(board,type,3,false) + this.findIRowChain(board,type,3,false) + this.findDIDiagChain(board,type,3) + this.findUIDiagChain(board,type,3);
             var numThrees = this.findIColChain(board,type,2,false) + this.findIRowChain(board,type,2,false) + this.findDIDiagChain(board,type,2) + this.findUIDiagChain(board,type,2);
             var numFours = this.findIColChain(board,type,1,false) + this.findIRowChain(board,type,1,false) + this.findDIDiagChain(board,type,1) + this.findUIDiagChain(board,type,1);
-            var score = numZeros * 100000.0 + numOnes * 2500.0 + numTwos * 50.0 + numThrees * 5.0 + numFours * 1.0;
+            var score = numOnes * 2500.0 + numTwos * 50.0 + numThrees * 5.0 + numFours * 1.0;
             return score;
         },
 
         // ======================================
-        // 
+        //
         //           Utility Functions
-        // 
+        //
         // ======================================
         // Function to make a list of items unique
         uniq: function(items, key) {
@@ -464,7 +463,7 @@ window.addEventListener('load', function() {
             return copy_board;
         },
 
-        // Function to shuffle an array: 
+        // Function to shuffle an array:
         // "http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array"
         shuffleArray: function(array) {
             for (var i = array.length - 1; i > 0; i--) {
@@ -479,7 +478,7 @@ window.addEventListener('load', function() {
         /**
          * Minimax functon for finding the best move on
          * a given game board
-         * 
+         *
          * @param  {[type]} board [description]
          * @param  {[type]} depth [description]
          * @param  {[type]} alpha [description]
