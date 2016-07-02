@@ -425,7 +425,7 @@ window.addEventListener('load', function() {
          * @return {Integer} Score
          */
         evaluateBoard: function(board, type) {
-            var numOnes =  this.findIColChain(board,type,4,false)+ this.findIRowChain(board,type,4,false) + this.findDIDiagChain(board,type,4) + this.findUIDiagChain(board,type,4);
+            var numOnes =  this.findIColChain(board,type,4,true)+ this.findIRowChain(board,type,4,true) + this.findDIDiagChain(board,type,4) + this.findUIDiagChain(board,type,4);
             var numTwos = this.findIColChain(board,type,3,false) + this.findIRowChain(board,type,3,false) + this.findDIDiagChain(board,type,3) + this.findUIDiagChain(board,type,3);
             var numThrees = this.findIColChain(board,type,2,false) + this.findIRowChain(board,type,2,false) + this.findDIDiagChain(board,type,2) + this.findUIDiagChain(board,type,2);
             var numFours = this.findIColChain(board,type,1,false) + this.findIRowChain(board,type,1,false) + this.findDIDiagChain(board,type,1) + this.findUIDiagChain(board,type,1);
