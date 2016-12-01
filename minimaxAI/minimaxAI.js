@@ -10,7 +10,7 @@ window.addEventListener('load', function() {
         run: function(callback) {
             var copyBoard = engine.getGameObjects();
             var myType = engine.turn;
-            var bestMove = this.minimax(copyBoard, 3, Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER, 1 - myType);
+            var bestMove = this.minimax(copyBoard, 2, Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER, 1 - myType);
             console.log(bestMove[0]);
             var x = bestMove[1][0];
             var y = bestMove[1][1];
