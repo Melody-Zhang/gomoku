@@ -430,7 +430,7 @@ window.addEventListener('load', function() {
             var numTwos = this.findIColChain(board,type,3,false) + this.findIRowChain(board,type,3,false) + this.findDIDiagChain(board,type,3) + this.findUIDiagChain(board,type,3);
             var numThrees = this.findIColChain(board,type,2,false) + this.findIRowChain(board,type,2,false) + this.findDIDiagChain(board,type,2) + this.findUIDiagChain(board,type,2);
             var numFours = this.findIColChain(board,type,1,false) + this.findIRowChain(board,type,1,false) + this.findDIDiagChain(board,type,1) + this.findUIDiagChain(board,type,1);
-            var score = numZeros * 1000000 + numOnes * 5000.0 + numTwos * 50.0 + numThrees * 5.0 + numFours * 1.0;
+            var score = numZeros * 1000000 + numOnes * 5000.0 + numTwos * 500.0 + numThrees * 5.0 + numFours * 1.0;
             return score;
         },
 
@@ -443,7 +443,7 @@ window.addEventListener('load', function() {
         uniq: function(items, key) {
             var set = {};
             return items.filter(function(item) {
-            var k = key ? key.apply(item) : item;
+                var k = key ? key.apply(item) : item;
                 return k in set ? false : set[k] = true;
             });
         },

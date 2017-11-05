@@ -37,7 +37,7 @@
 		/**
 		 * Determines the board cell size. Should not be modified on the fly.
 		 */
-		boardCellSize: 64,
+		boardCellSize: 30,
 		boardWidth: 0,
 		boardHeight: 0,
 
@@ -276,7 +276,7 @@
 			var numberOfCellsVer = Math.floor(this.boardHeight / this.boardCellSize);
 
 			// Draw squares/cells.
-			c.strokeStyle = 'rgb(128,128,128)';
+            c.strokeStyle = 'rgb(0,0,0)';
 
 			// Iterate through the number of cells and draw columns
 			for (var x = 0; x <= numberOfCellsHor; x++) {
@@ -340,21 +340,22 @@
 						// X
 						case 0:
 							c.beginPath();
-							c.strokeStyle = 'rgb(207,91,30)';
-							c.moveTo(x * this.boardCellSize + 2, y * this.boardCellSize + 2.5);
-							c.lineTo(x * this.boardCellSize + this.boardCellSize - 2, y * this.boardCellSize + 0.5 + this.boardCellSize - 2);
-							c.moveTo(x * this.boardCellSize + this.boardCellSize - 2, y * this.boardCellSize + 2.5);
-							c.lineTo(x * this.boardCellSize + 2, y * this.boardCellSize + 0.5 + this.boardCellSize - 2);
+							c.strokeStyle = 'rgb(0,0,0)';
+                            c.arc(x * this.boardCellSize + 0.5 + this.boardCellSize / 2, y * this.boardCellSize + 0.5 + this.boardCellSize / 2, this.boardCellSize / 2 - 2 , 0, 360, false);
 							c.stroke();
+                            c.fillStyle = "black";
+                            c.fill();
 							c.closePath();
 							break;
 
 						// O
 						case 1:
 							c.beginPath();
-							c.strokeStyle = 'rgb(10,148,207)';
+							c.strokeStyle = 'rgb(255,255,255)';
 							c.arc(x * this.boardCellSize + 0.5 + this.boardCellSize / 2, y * this.boardCellSize + 0.5 + this.boardCellSize / 2, this.boardCellSize / 2 - 2 , 0, 360, false);
 							c.stroke();
+                            c.fillStyle = "white";
+                            c.fill();
 							c.closePath();
 							break;
 
@@ -372,7 +373,7 @@
 		drawLastMove: function() {
 			var ctx = this.ctx;
 
-			ctx.strokeStyle = 'rgb(255, 0, 0)';
+			ctx.strokeStyle = 'rgb(220, 10, 10)';
 			ctx.lineWidth = 2;
 
 			ctx.beginPath();

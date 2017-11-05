@@ -544,3 +544,17 @@ input.sidebar-item:focus {
 .guestbook-map {
 
 }
+
+.daimeng{
+  background: url('./src/1.jpg');
+  background-size: 100% 100%;
+  width: 489px;
+  height: 470px;
+  padding-top: 19px;
+  display: inline-block;
+}
+
+.daimeng canvas{
+  position: relative;
+  z-index: 10;
+}
